@@ -32,10 +32,15 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
+        $id = Auth::user()->id;
+        $adminData = User::find($id);
+        $username = $adminData->name;
+
+
         $request->session()->regenerate();
 
         $notification = array(
-            'message' => ' Login Successfully',
+            'message' => 'User ' . $username . ' Login Successfully',
             'alert-type' => 'info'
         );
 

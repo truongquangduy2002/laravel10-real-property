@@ -44,7 +44,7 @@
 
                                         <div class="form-group">
                                             <label>Email/Name/Phone </label>
-                                            <input type="text" name="email" id="email" required="">
+                                            <input type="text" name="login" id="login" required="">
                                         </div>
                                         <div class="form-group">
                                             <label>Password</label>

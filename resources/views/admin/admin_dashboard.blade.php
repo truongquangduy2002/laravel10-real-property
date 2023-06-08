@@ -88,6 +88,32 @@ License: For each use you must have a valid license purchased only from above li
     <script src="{{ asset('backend/assets/js/dashboard-dark.js') }}"></script>
     <!-- End custom js for this page -->
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{ asset('backend/assets/js/code/code.js') }}"></script>
+
+    <!-- Start datatables -->
+    <script src="{{ asset('backend/assets/vendors/datatables.net/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/data-table.js') }}"></script>
+    <!-- End datatables -->
+
+    <link rel="stylesheet" href="{{ asset('backend/assets/vendors/select2/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/assets/vendors/jquery-tags-input/jquery.tagsinput.min.css') }}">
+
+    <!-- Input Tags -->
+    <script src="{{ asset('backend/assets/vendors/inputmask/jquery.inputmask.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/vendors/select2/select2.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/vendors/typeahead.js/typeahead.bundle.min.js') }}"></script>
+
+    <script src="{{ asset('backend/assets/vendors/jquery-tags-input/jquery.tagsinput.min.js') }}"></script>
+
+    <script src="{{ asset('backend/assets/js/inputmask.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/select2.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/typeahead.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/tags-input.js') }}"></script>
+
+    <!-- Input Tags -->
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <script>

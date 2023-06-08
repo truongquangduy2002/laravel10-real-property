@@ -44,6 +44,8 @@
     <!-- End layout styles -->
 
     <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 </head>
 
 <body>
@@ -57,7 +59,6 @@
                             <div class="row">
                                 <div class="col-md-4 pe-md-0">
                                     <div class="authlogin-side-wrapper">
-                                        <img src="" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-8 ps-md-0">
@@ -68,8 +69,8 @@
                                         <form class="forms-sample" method="post" action="{{ route('login') }}">
                                             @csrf
                                             <div class="mb-3">
-                                                <label for="login" class="form-label">Email </label>
-                                                <input type="text" name="email" class="form-control" id="email"
+                                                <label for="login" class="form-label">Email/Name/Phone </label>
+                                                <input type="text" name="login" class="form-control" id="login"
                                                     placeholder="Email">
                                             </div>
 
@@ -86,11 +87,9 @@
                                                 </label>
                                             </div>
                                             <div>
-
                                                 <button type="submit"
                                                     class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
                                                     Login
-
                                                 </button>
                                             </div>
                                         </form>
@@ -116,9 +115,27 @@
     <script src="{{ asset('backend/assets/js/template.js') }}"></script>
     <!-- endinject -->
 
-    <!-- Custom js for this page -->
-    <!-- End custom js for this page -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+    <script>
+        @if (Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}"
+            switch (type) {
+                case 'info':
+                    toastr.info(" {{ Session::get('message') }} ");
+                    break;
+                case 'success':
+                    toastr.success(" {{ Session::get('message') }} ");
+                    break;
+                case 'warning':
+                    toastr.warning(" {{ Session::get('message') }} ");
+                    break;
+                case 'error':
+                    toastr.error(" {{ Session::get('message') }} ");
+                    break;
+            }
+        @endif
+    </script>
 </body>
 
 </html>
