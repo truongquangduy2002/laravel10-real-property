@@ -19,7 +19,7 @@
                 </ul>
                 @auth
                     <div class="sign-box">
-                        <a href="{{ route('user.index') }}"><i class="fas fa-user"></i>Dashboard</a>
+                        <a href="{{ route('dashboard') }}"><i class="fas fa-user"></i>Dashboard</a>
                         <a href="{{ route('user.logout') }}"><i class="fas fa-user"></i>Logout</a>
                     </div>
                 @else
@@ -48,43 +48,18 @@
                     <nav class="main-menu navbar-expand-md navbar-light">
                         <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="current dropdown"><a href="{{ route('user.index') }}"><span>Home</span></a>
-                                    <ul>
-                                        <li><a href="index.html">Main Home</a></li>
-                                        <li><a href="index-2.html">Home Modern</a></li>
-                                        <li><a href="index-3.html">Home Map</a></li>
-                                        <li><a href="index-4.html">Home Half Map</a></li>
-                                        <li><a href="index-5.html">Home Agent</a></li>
-                                        <li><a href="index-onepage.html">OnePage Home</a></li>
-                                        <li><a href="index-rtl.html">RTL Home</a></li>
-                                        <li class="dropdown"><a href="index.html">Header Style</a>
-                                            <ul>
-                                                <li><a href="index.html">Header Style 01</a></li>
-                                                <li><a href="index-2.html">Header Style 02</a></li>
-                                                <li><a href="index-3.html">Header Style 03</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <li><a href="{{ route('user.index') }}"><span>Home</span></a>
                                 </li>
-                                <li class="dropdown"><a href="index.html"><span>Listing</span></a>
+                                {{-- <li class="dropdown"><a href="index.html"><span>Listing</span></a>
                                     <ul>
                                         <li><a href="agents-list.html">Agents List</a></li>
-                                        <li><a href="agents-grid.html">Agents Grid</a></li>
-                                        <li><a href="agents-details.html">Agent Details</a></li>
+
                                     </ul>
-                                </li>
+                                </li> --}}
                                 <li class="dropdown"><a href="index.html"><span>Property</span></a>
                                     <ul>
                                         <li><a href="property-list.html">Property List</a></li>
-                                        <li><a href="property-grid.html">Property Grid</a></li>
-                                        <li><a href="property-list-2.html">Property List Full View</a></li>
-                                        <li><a href="property-grid-2.html">Property Grid Full View</a></li>
-                                        <li><a href="property-list-3.html">Property List Half View</a></li>
-                                        <li><a href="property-grid-3.html">Property Grid Half View</a></li>
-                                        <li><a href="property-details.html">Property Details 01</a></li>
-                                        <li><a href="property-details-2.html">Property Details 02</a></li>
-                                        <li><a href="property-details-3.html">Property Details 03</a></li>
-                                        <li><a href="property-details-4.html">Property Details 04</a></li>
+
                                     </ul>
                                 </li>
                                 <li class="dropdown"><a href="index.html"><span>Pages</span></a>
@@ -154,6 +129,9 @@
                                     </ul>
                                 </li>
                                 <li><a href="contact.html"><span>Contact</span></a></li>
+                                <li>
+                                    <a href="index.html" class="theme-btn btn-one"><span>+</span>Add Listing</a>
+                                </li>
                             </ul>
                         </div>
                     </nav>
