@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Validation\Rule;
 
 class RegisteredUserController extends Controller
 {
@@ -34,14 +35,32 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'name' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('users', 'name'), // Kiểm tra trường "name" duy nhất trong bảng "users"
+            ],
+            'phone' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('users', 'phone'), // Kiểm tra trường "phone" duy nhất trong bảng "users"
+            ],
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+                Rule::unique('users', 'email'), // Kiểm tra trường "email" duy nhất trong bảng "users"
+            ],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'phone' => $request->phone,
             'password' => Hash::make($request->password),
         ]);
 
@@ -49,6 +68,10 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect('/dashboard');
+        if ($user) {
+            return redirect('/dashboard');
+        } else {
+            return back()->with('error', 'Registration failed');
+        }
     }
 }
